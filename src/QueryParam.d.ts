@@ -1,0 +1,29 @@
+/*!
+ * @author electricessence / https://github.com/electricessence/
+ * @license MIT
+ */
+/**
+ * @packageDocumentation
+ * @module uri
+ */
+
+import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import UriComponent from './UriComponent';
+
+type QueryParamIterable
+	= Iterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;
+
+declare namespace QueryParam
+{
+	export type Array
+		= ArrayLike<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;
+
+	export type Iterable = QueryParamIterable;
+
+	export type IterableOrArray = Array | Iterable;
+
+	export type Convertible
+		= string | UriComponent.Values | IterableOrArray;
+}
+
+export default QueryParam;
