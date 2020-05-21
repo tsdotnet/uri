@@ -13,9 +13,9 @@ import Exception from '@tsdotnet/exceptions';
 import ArgumentException from '@tsdotnet/exceptions/dist/ArgumentException';
 import ArgumentOutOfRangeException from '@tsdotnet/exceptions/dist/ArgumentOutOfRangeException';
 import {trim} from '@tsdotnet/text-utility/dist/Utility';
-import IUri from './UriValues';
+import UriValues from './UriValues';
 import QueryParam from './QueryParam';
-import {encode, parseToValues, Separator} from './QueryParams';
+import {encode, parseToValues, Separator} from './query';
 import Scheme from './Scheme';
 import SchemeValue from './SchemeValue';
 
@@ -27,7 +27,7 @@ const VOID0: undefined = void 0;
  * The read-only model (frozen) is easier for debugging than exposing accessors for each property.
  */
 export class Uri
-	implements IUri
+	implements UriValues
 {
 	readonly scheme: SchemeValue.Any | null;
 	readonly userInfo: string | null;
@@ -85,7 +85,7 @@ export class Uri
 		this.path = path || null;
 
 
-		if(typeof query!=='string')
+		if(query && typeof query!=='string')
 			query = encode(query);
 
 		this.query = formatQuery(query) || null;
@@ -129,7 +129,7 @@ export class Uri
 	 * @param defaults
 	 * @returns {Uri}
 	 */
-	static from (uri: string | IUri | null | undefined, defaults?: IUri): Uri
+	static from (uri: string | UriValues | null | undefined, defaults?: UriValues): Uri
 	{
 		const u = typeof uri==='string'
 			? Uri.parse(uri) // Parsing a string should throw errors.  Null or undefined simply means empty.
@@ -153,9 +153,9 @@ export class Uri
 	 * @param url The url to parse.
 	 * @returns {UriValues} Will throw an exception if not able to parse.
 	 */
-	static parse (url: string): IUri
+	static parse (url: string): UriValues
 
-	static parse (url: string, throwIfInvalid: true): IUri
+	static parse (url: string, throwIfInvalid: true): UriValues
 
 	/**
 	 * Parses a URL into it's components.
@@ -163,11 +163,11 @@ export class Uri
 	 * @param throwIfInvalid Defaults to true.
 	 * @returns {UriValues} Returns a map of the values or *null* if invalid and *throwIfInvalid* is <b>false</b>.
 	 */
-	static parse (url: string, throwIfInvalid: boolean): IUri | null
+	static parse (url: string, throwIfInvalid: boolean): UriValues | null
 
-	static parse (url: string, throwIfInvalid: boolean = true): IUri | null
+	static parse (url: string, throwIfInvalid: boolean = true): UriValues | null
 	{
-		let result: IUri | null = null;
+		let result: UriValues | null = null;
 		const ex = tryParse(url, (out) => {result = out;});
 		if(throwIfInvalid && ex) throw ex;
 		return result;
@@ -179,7 +179,7 @@ export class Uri
 	 * @param out A delegate to capture the value.
 	 * @returns {boolean} True if valid.  False if invalid.
 	 */
-	static tryParse (url: string, out: (result: IUri) => void): boolean
+	static tryParse (url: string, out: (result: UriValues) => void): boolean
 	{
 		return !tryParse(url, out); // return type is Exception.
 	}
@@ -189,7 +189,7 @@ export class Uri
 	 * @param {UriValues} map
 	 * @return {UriValues}
 	 */
-	static copyOf (map: IUri): IUri
+	static copyOf (map: UriValues): UriValues
 	{
 		return copyUri(map);
 	}
@@ -199,7 +199,7 @@ export class Uri
 	 * @param uri
 	 * @returns {string}
 	 */
-	static toString (uri: IUri): string
+	static toString (uri: UriValues): string
 	{
 		return uri instanceof Uri
 			? uri.absoluteUri
@@ -211,7 +211,7 @@ export class Uri
 	 * @param uri
 	 * @returns {string}
 	 */
-	static getAuthority (uri: IUri): string
+	static getAuthority (uri: UriValues): string
 	{
 		return getAuthority(uri);
 	}
@@ -221,28 +221,28 @@ export class Uri
 	 * @param other
 	 * @returns {boolean}
 	 */
-	equals (other: IUri): boolean
+	equals (other: UriValues): boolean
 	{
 		return this===other || this.absoluteUri==Uri.toString(other);
 	}
 
-	copyTo (map: IUri): IUri
+	copyTo (map: UriValues): UriValues
 	{
 		return copyUri(this, map);
 	}
 
 	updateQuery (query: QueryParam.Convertible): Uri
 	{
-		const map = this.toMap();
-		map.query = query;
-		return Uri.from(map);
+		const values = this.toValues() as any;
+		values.query = query;
+		return Uri.from(values);
 	}
 
 	/**
 	 * Creates a writable copy.
 	 * @returns {UriValues}
 	 */
-	toMap (): IUri
+	toValues (): UriValues
 	{
 		return this.copyTo({});
 	}
@@ -295,11 +295,11 @@ export enum Fields
 
 Object.freeze(Fields);
 
-function copyUri (from: IUri, to?: IUri): IUri
+function copyUri (from: UriValues, to?: UriValues): UriValues
 {
-	let i = 0, field: keyof IUri;
+	let i = 0, field: keyof UriValues;
 	if(!to) to = {};
-	while((field = Fields[i++] as keyof IUri))
+	while((field = Fields[i++] as keyof UriValues))
 	{
 		const value = from[field];
 		//@ts-ignore
@@ -348,7 +348,7 @@ function getPort (port: number | string | null | undefined): number | null
 	throw new ArgumentException('port', 'invalid value');
 }
 
-function getAuthority (uri: IUri): string
+function getAuthority (uri: UriValues): string
 {
 
 	if(!uri.host)
@@ -386,7 +386,7 @@ function formatFragment (fragment: string | null | undefined): string | null | u
 	return fragment && ((fragment.indexOf(HASH)!==0 ? HASH : EMPTY) + fragment);
 }
 
-function getPathAndQuery (uri: IUri): string
+function getPathAndQuery (uri: UriValues): string
 {
 
 	const
@@ -399,7 +399,7 @@ function getPathAndQuery (uri: IUri): string
 
 }
 
-function uriToString (uri: IUri): string
+function uriToString (uri: UriValues): string
 {
 	// scheme:[//[user:password@]domain[:port]][/]path[?query][#fragment]
 	// {scheme}{authority}{path}{query}{fragment}
@@ -429,7 +429,7 @@ function uriToString (uri: IUri): string
 }
 
 
-function tryParse (url: string, out: Action<IUri>): null | Exception
+function tryParse (url: string, out: Action<UriValues>): null | Exception
 {
 	if(!url)
 		return new ArgumentException('url', 'Nothing to parse.');
@@ -440,7 +440,7 @@ function tryParse (url: string, out: Action<IUri>): null | Exception
 
 	// scheme:[//[user:password@]domain[:port]][/]path[?query][#fragment]
 	let i: number;
-	const result: IUri = {};
+	const result: UriValues = {};
 
 	// Anything after the first # is the fragment.
 	i = url.indexOf(HASH);

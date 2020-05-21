@@ -56,10 +56,10 @@
     "@tsdotnet/common-interfaces": "^1.0.4",
     "@tsdotnet/exceptions": "^1.0.15",
     "@tsdotnet/key-value-pair": "^1.0.9",
-    "@tsdotnet/ordered-registry": "^1.0.7",
-    "@tsdotnet/serialization": "^1.0.2",
+    "@tsdotnet/ordered-registry": "^1.0.8",
+    "@tsdotnet/serialization": "^1.0.4",
     "@tsdotnet/text-utility": "^1.0.25",
-    "@tsdotnet/type": "^1.0.2",
+    "@tsdotnet/type": "^1.0.7",
     "tslib": "^2.0.0"
   }
 }

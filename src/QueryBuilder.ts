@@ -7,10 +7,13 @@
  * @module uri
  */
 
+import extractKeyValue from '@tsdotnet/key-value-pair';
+import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import OrderedRegistry from '@tsdotnet/ordered-registry';
+import type from '@tsdotnet/type';
 import QueryParam from './QueryParam';
-import {encode, parse} from './QueryParams';
+import {encode, parse} from './query';
 import UriComponent from './UriComponent';
-import OrderedRegistry from '@tsdotnet/ordered-registry'
 
 /**
  * Provides a means for parsing and building a set of parameters.
@@ -31,6 +34,12 @@ export default class QueryBuilder
 	}
 
 
+	/**
+	 * Creates a new QueryBuilder using the provided query.
+	 * @param {QueryParam.Convertible} query
+	 * @param {boolean} decodeValues
+	 * @return {QueryBuilder}
+	 */
 	static init (
 		query: QueryParam.Convertible,
 		decodeValues: boolean = true): QueryBuilder
@@ -38,6 +47,12 @@ export default class QueryBuilder
 		return new QueryBuilder(query, decodeValues);
 	}
 
+	/**
+	 * Accepts any convertible query parameter and imports the values.
+	 * @param {QueryParam.Convertible} query
+	 * @param {boolean} decodeValues
+	 * @return {QueryBuilder}
+	 */
 	importQuery (
 		query: QueryParam.Convertible,
 		decodeValues: boolean = true): QueryBuilder
@@ -47,15 +62,76 @@ export default class QueryBuilder
 		{
 			this.importFromString(query, decodeValues);
 		}
-		else if(isFiniteEnumerableOrArrayLike(query))
+		else if(type.isIterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>(query))
 		{
-			this.importEntries(query);
+			for(const entry of query)
+			{
+				extractKeyValue(entry,
+					(key, value) => { this.import(key, value); });
+			}
 		}
 		else
 		{
-			this.importMap(<UriComponent.Values>query);
+			this.importValues(query as UriComponent.Values);
 		}
 
+		return this;
+	}
+
+	/**
+	 * Adds a key+value to the query.
+	 * @param {string} key
+	 * @param {UriComponent.Value} value
+	 * @return {this}
+	 */
+	importSingle (key: string, value: UriComponent.Value): this
+	{
+		if(this.has(key))
+		{
+			const prev = this.get(key);
+			if(prev instanceof Array)
+				prev.push(value);
+			else
+			{
+				this.set(key, [prev as UriComponent.Value, value]);
+			}
+		}
+		else
+			this.set(key, value);
+
+		return this;
+	}
+
+	/**
+	 * Adds a key+value or set of values by key.
+	 * @param {string} key
+	 * @param {UriComponent.Value | UriComponent.Value[]} value
+	 * @return {this}
+	 */
+	import (key: string, value: UriComponent.Value | UriComponent.Value[]): this
+	{
+		if(value instanceof Array)
+		{
+			for(const v of value) this.importSingle(key, v);
+		}
+		else
+		{
+			this.importSingle(key, value);
+		}
+		return this;
+	}
+
+	/**
+	 * Imports a set of key+values.
+	 * @param {UriComponent.Values} values
+	 * @return {this}
+	 */
+	importValues (values: UriComponent.Values): this
+	{
+		for(const key of Object.keys(values))
+		{
+			this.import(key, values[key]);
+		}
 		return this;
 	}
 
@@ -71,20 +147,8 @@ export default class QueryBuilder
 		deserialize: boolean  = true,
 		decodeValues: boolean = true): QueryBuilder
 	{
-		const _ = this;
 		parse(values,
-			(key, value) => {
-				if(_.containsKey(key))
-				{
-					const prev = _.getValue(key);
-					if((prev) instanceof (Array))
-						prev.push(value);
-					else
-						_.setValue(key, [<UriComponent.Value>prev, value]);
-				}
-				else
-					_.setValue(key, value);
-			},
+			(key, value) => { this.importSingle(key, value); },
 			deserialize,
 			decodeValues);
 

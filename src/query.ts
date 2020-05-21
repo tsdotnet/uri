@@ -8,9 +8,10 @@
  */
 
 import {Primitive} from '@tsdotnet/common-interfaces';
-import type from '@tsdotnet/type';
+import extractKeyValue from '@tsdotnet/key-value-pair';
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
 import * as Serialize from '@tsdotnet/serialization';
+import type from '@tsdotnet/type';
 import QueryParam from './QueryParam';
 import UriComponent from './UriComponent';
 
@@ -34,24 +35,30 @@ const
  * @returns {string}
  */
 export function encode (
-	values: UriComponent.Values | QueryParam.EnumerableOrArray,
+	values: UriComponent.Values | QueryParam.IterableOrArrayLike,
 	prefixIfNotEmpty?: boolean): string
 {
 	if(!values) return EMPTY;
+	if(typeof values!='object') throw new TypeError('Collection of key value pair expected.');
+
 	const entries: string[] = [];
 
-	if(isFiniteEnumerableOrArrayLike(values))
+	const iterable = type.asIterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>(values);
+	if(iterable)
 	{
-		forEach(values, entry =>
+		for(const entry of iterable)
+		{
 			extractKeyValue(entry,
-				(key, value) => appendKeyValue(entries, key, value))
-		);
+				(key, value) => appendKeyValue(entries, key, value));
+		}
 	}
 	else
 	{
-		Object.keys(values).forEach(
-			key => appendKeyValue(entries, key, values[key])
-		);
+		for(const key of Object.keys(values))
+		{
+			// @ts-ignore
+			appendKeyValue(entries, key, values[key]);
+		}
 	}
 
 	return (entries.length && prefixIfNotEmpty ? QUERY_SEPARATOR : EMPTY)
@@ -72,14 +79,14 @@ function appendKeyValue (
 	key: string,
 	value: UriComponent.Value | Iterable<UriComponent.Value> | ArrayLike<UriComponent.Value>): void
 {
-	if(value instanceof Array || )
-	if(isFiniteEnumerableOrArrayLike(value))
+	const iterable = type.asIterable<UriComponent.Value>(value);
+	if(iterable)
 	{
-		forEach(value, v => appendKeyValueSingle(entries, key, v));
+		for(const v of iterable) appendKeyValueSingle(entries, key, v);
 	}
 	else
 	{
-		appendKeyValueSingle(entries, key, value);
+		appendKeyValueSingle(entries, key, value as UriComponent.Value);
 	}
 }
 
