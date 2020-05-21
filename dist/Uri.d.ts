@@ -8,9 +8,9 @@
  * @module uri
  */
 import { Primitive } from '@tsdotnet/common-interfaces';
-import UriValues from './UriValues';
 import QueryParam from './QueryParam';
 import SchemeValue from './SchemeValue';
+import UriValues from './UriValues';
 /**
  * Provides an read-only model representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
  *

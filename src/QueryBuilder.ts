@@ -11,8 +11,8 @@ import extractKeyValue from '@tsdotnet/key-value-pair';
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import type from '@tsdotnet/type';
-import QueryParam from './QueryParam';
 import {encode, parse} from './query';
+import QueryParam from './QueryParam';
 import UriComponent from './UriComponent';
 
 /**

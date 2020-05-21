@@ -3,14 +3,14 @@
  * @license MIT
  */
 
-import UriHostNameType from './UriHostNameType';
+import * as query from './query';
 import QueryBuilder from './QueryBuilder';
 import QueryParam from './QueryParam';
-import * as query from './query';
 import Scheme from './Scheme';
-import UriValues, { UrnValues } from './UriValues';
 import SchemeValue from './SchemeValue';
 import UriComponent from './UriComponent';
+import UriHostNameType from './UriHostNameType';
+import UriValues, {UrnValues} from './UriValues';
 
 /**
  * @packageDocumentation
@@ -26,6 +26,6 @@ export {
 	SchemeValue,
 	UrnValues,
 	UriValues,
-	UriComponent,
+	UriComponent
 
-}
+};

@@ -4,11 +4,11 @@
  * @license MIT
  * Based on: https://msdn.microsoft.com/en-us/library/system.UriHostNameType%28v=vs.110%29.aspx
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * @packageDocumentation
  * @module uri
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 var UriHostNameType;
 (function (UriHostNameType) {
     /**

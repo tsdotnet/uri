@@ -13,11 +13,11 @@ import Exception from '@tsdotnet/exceptions';
 import ArgumentException from '@tsdotnet/exceptions/dist/ArgumentException';
 import ArgumentOutOfRangeException from '@tsdotnet/exceptions/dist/ArgumentOutOfRangeException';
 import {trim} from '@tsdotnet/text-utility/dist/Utility';
-import UriValues from './UriValues';
-import QueryParam from './QueryParam';
 import {encode, parseToValues, Separator} from './query';
+import QueryParam from './QueryParam';
 import Scheme from './Scheme';
 import SchemeValue from './SchemeValue';
+import UriValues from './UriValues';
 
 const VOID0: undefined = void 0;
 
