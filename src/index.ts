@@ -2,30 +2,30 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
+/**
+ * @packageDocumentation
+ * @module uri
+ */
 
 import * as query from './query';
 import QueryBuilder from './QueryBuilder';
 import QueryParam from './QueryParam';
 import Scheme from './Scheme';
 import SchemeValue from './SchemeValue';
+import Uri from './Uri';
 import UriComponent from './UriComponent';
 import UriHostNameType from './UriHostNameType';
 import UriValues, {UrnValues} from './UriValues';
 
-/**
- * @packageDocumentation
- * @module uri
- */
-
 export {
-	UriHostNameType,
+	query,
 	QueryBuilder,
 	QueryParam,
-	query,
 	Scheme,
 	SchemeValue,
+	Uri,
+	UriComponent,
 	UrnValues,
 	UriValues,
-	UriComponent
-
+	UriHostNameType
 };
