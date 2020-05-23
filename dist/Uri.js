@@ -191,7 +191,6 @@ function copyUri(from, to) {
         to = {};
     while ((field = Fields[i++])) {
         const value = from[field];
-        //@ts-ignore
         if (value)
             to[field] = value;
     }

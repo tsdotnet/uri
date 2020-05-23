@@ -56,8 +56,7 @@ export function encode (
 	{
 		for(const key of Object.keys(values))
 		{
-			// @ts-ignore
-			appendKeyValue(entries, key, values[key]);
+			appendKeyValue(entries, key, (values as any)[key]);
 		}
 	}
 
@@ -115,7 +114,7 @@ export function encodeValue (value: UriComponent.Value): string
  * @param instance
  * @returns {boolean}
  */
-export function isUriComponentFormattable (instance: any): instance is UriComponent.Formattable
+export function isUriComponentFormattable (instance: unknown): instance is UriComponent.Formattable
 {
 	return type.hasMemberOfType<UriComponent.Formattable>(instance, TO_URI_COMPONENT, 'function');
 }

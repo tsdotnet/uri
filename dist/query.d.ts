@@ -28,7 +28,7 @@ export declare function encodeValue(value: UriComponent.Value): string;
  * @param instance
  * @returns {boolean}
  */
-export declare function isUriComponentFormattable(instance: any): instance is UriComponent.Formattable;
+export declare function isUriComponentFormattable(instance: unknown): instance is UriComponent.Formattable;
 /**
  * Parses a string for valid query param entries and pipes them through a handler.
  * @param query

@@ -38,7 +38,6 @@ function encode(values, prefixIfNotEmpty) {
     }
     else {
         for (const key of Object.keys(values)) {
-            // @ts-ignore
             appendKeyValue(entries, key, values[key]);
         }
     }

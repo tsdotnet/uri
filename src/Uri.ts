@@ -302,8 +302,7 @@ function copyUri (from: UriValues, to?: UriValues): UriValues
 	while((field = Fields[i++] as keyof UriValues))
 	{
 		const value = from[field];
-		//@ts-ignore
-		if(value) to![field] = value;
+		if(value) (to as any)![field] = value;
 	}
 	return to;
 }
