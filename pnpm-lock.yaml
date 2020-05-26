@@ -2,7 +2,7 @@ dependencies:
   '@tsdotnet/common-interfaces': 1.0.4
   '@tsdotnet/exceptions': 1.0.16
   '@tsdotnet/key-value-pair': 1.0.11
-  '@tsdotnet/ordered-registry': 1.0.14
+  '@tsdotnet/ordered-registry': 1.0.16
   '@tsdotnet/serialization': 1.0.5
   '@tsdotnet/text-utility': 1.0.26
   '@tsdotnet/type': 1.0.8
@@ -254,7 +254,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KBJhR1hstJnNXi4AwNuRUs6XhjNbUfOVk+ZL7lH+/XkctNO8i+7Wfch/XGFmdmBsPpFrR427Cqv0lRW5WUUV/w==
-  /@tsdotnet/ordered-registry/1.0.14:
+  /@tsdotnet/ordered-registry/1.0.16:
     dependencies:
       '@tsdotnet/collection-base': 2.0.6
       '@tsdotnet/common-interfaces': 1.0.4
@@ -264,7 +264,7 @@ packages:
       tslib: 2.0.0
     dev: false
     resolution:
-      integrity: sha512-j4J499PVF5aUlpfiaVsmCmzUWLtQblQUaoj2S9GYgcI8tHJiT5/xv+r2SuzJ31xC3TVHQmf2SsMjgdF4AqYkQQ==
+      integrity: sha512-Or5S6kyJWS3MpWyFgn2uyE5ZNcVCJ49UIGipnzvNn0KG2k+tfx2LrWCDG1R6LIpi1vqTb1LQDqtm99FB5AQbkw==
   /@tsdotnet/serialization/1.0.5:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
@@ -3099,7 +3099,7 @@ specifiers:
   '@tsdotnet/common-interfaces': ^1.0.4
   '@tsdotnet/exceptions': ^1.0.16
   '@tsdotnet/key-value-pair': ^1.0.11
-  '@tsdotnet/ordered-registry': ^1.0.14
+  '@tsdotnet/ordered-registry': ^1.0.16
   '@tsdotnet/serialization': ^1.0.5
   '@tsdotnet/text-utility': ^1.0.26
   '@tsdotnet/type': ^1.0.8
