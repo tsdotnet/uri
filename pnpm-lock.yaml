@@ -2,7 +2,7 @@ dependencies:
   '@tsdotnet/common-interfaces': 1.0.4
   '@tsdotnet/exceptions': 1.0.17
   '@tsdotnet/key-value-pair': 1.0.13
-  '@tsdotnet/ordered-registry': 1.0.16
+  '@tsdotnet/ordered-registry': 1.0.17
   '@tsdotnet/serialization': 1.0.7
   '@tsdotnet/text-utility': 1.0.27
   '@tsdotnet/type': 1.0.11
@@ -266,33 +266,27 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-1V9XOY4rDW0rehzbrcqAmHnz8e7SKvX27gh8Gt2WgB0+pdzdiLV83p72kZPU+jvMbS1qU5mauP2iOvO8rhmurQ==
-  /@tsdotnet/collection-base/2.0.6:
+  /@tsdotnet/collection-base/2.0.8:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
-      '@tsdotnet/compare': 1.3.13
-      '@tsdotnet/exceptions': 1.0.16
-      tslib: 2.0.0
+      '@tsdotnet/compare': 1.3.16
+      '@tsdotnet/exceptions': 1.0.17
+      tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-iSAPS8Wsk3/a11U2DX6iMuCCtB3IpfmFvoI3yjH7l7rDnqD0Liyq3bSSZNAqlqdvEulTi9yJFZjDX1THT//Vkw==
+      integrity: sha512-o0B4wnHW/4C+ssY9NjdrfiMwtmfjBUGS2ga01S1h3PWsIRve+lyKsjNMr7W06aPVed7U6AJ9rW6pp9ybF1qqQQ==
   /@tsdotnet/common-interfaces/1.0.4:
     dev: false
     resolution:
       integrity: sha512-/LngZd3+wOlPw5VdQMxB+QNLuVH+9QsqBD+RZyKEKDhENP36vPhsTGbvA7bFNITnN1AqPy/Ih+x8A+jCYUhUgA==
-  /@tsdotnet/compare/1.3.13:
+  /@tsdotnet/compare/1.3.16:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
-      '@tsdotnet/type': 1.0.8
-      tslib: 2.0.0
+      '@tsdotnet/type': 1.0.11
+      tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-7cPmEDQ0v/k3CHSnvMOYf9xLgWX96JIdMpDnonvIl3y/0sAexQDtRSKxLki2l/iBgsL/npGwLDBn/wmZGxz2Tg==
-  /@tsdotnet/exceptions/1.0.16:
-    dependencies:
-      tslib: 2.0.0
-    dev: false
-    resolution:
-      integrity: sha512-uJwSxVgTVmNOSvit1TFLgFass/VGEyEDRx8zvgtC3YaAj/KCQi1wE/uchBIFaXCWYSmOELHZjDZRv4zYguVqTQ==
+      integrity: sha512-5bQnk4CKjmLPooJtpqFV+2Z09aRR/G9FlHuLcHlLZ2Cwji+LEqY10z90sE4A2htKHZsqjf/Rz8RfYcOjMA3Ssw==
   /@tsdotnet/exceptions/1.0.17:
     dependencies:
       tslib: 2.2.0
@@ -308,26 +302,26 @@ packages:
     dev: false
     resolution:
       integrity: sha512-m9bQG0w0a1yLHWioacAY3w3h0+n458b1wU/G1IdNM6ak/FMkevGBB1sPvg1FAGshuey+GJE6x+PQpmj+/zdiTQ==
-  /@tsdotnet/linked-node-list/1.3.13:
+  /@tsdotnet/linked-node-list/1.3.15:
     dependencies:
-      '@tsdotnet/collection-base': 2.0.6
+      '@tsdotnet/collection-base': 2.0.8
       '@tsdotnet/common-interfaces': 1.0.4
-      '@tsdotnet/exceptions': 1.0.16
-      tslib: 2.0.0
+      '@tsdotnet/exceptions': 1.0.17
+      tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-KBJhR1hstJnNXi4AwNuRUs6XhjNbUfOVk+ZL7lH+/XkctNO8i+7Wfch/XGFmdmBsPpFrR427Cqv0lRW5WUUV/w==
-  /@tsdotnet/ordered-registry/1.0.16:
+      integrity: sha512-dKCsAJAuAbthg/ikWmCnxF9eTDigj5Spx3HwtKtgR1+z6xMAShLq8C7EicRN+x49wPu3hWmcwoNMb2ZxPqzZow==
+  /@tsdotnet/ordered-registry/1.0.17:
     dependencies:
-      '@tsdotnet/collection-base': 2.0.6
+      '@tsdotnet/collection-base': 2.0.8
       '@tsdotnet/common-interfaces': 1.0.4
-      '@tsdotnet/compare': 1.3.13
-      '@tsdotnet/exceptions': 1.0.16
-      '@tsdotnet/linked-node-list': 1.3.13
-      tslib: 2.0.0
+      '@tsdotnet/compare': 1.3.16
+      '@tsdotnet/exceptions': 1.0.17
+      '@tsdotnet/linked-node-list': 1.3.15
+      tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-Or5S6kyJWS3MpWyFgn2uyE5ZNcVCJ49UIGipnzvNn0KG2k+tfx2LrWCDG1R6LIpi1vqTb1LQDqtm99FB5AQbkw==
+      integrity: sha512-7UlVa8bv7KuROY9sJhfjSu34uvf66GTqwIjxorxoOTTdiIrDTfPCdB4DKI33ig0zfKWSPDX3q7TyryaGI1GKSg==
   /@tsdotnet/serialization/1.0.7:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
@@ -350,13 +344,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-oD+5+aTyU7DNvkVyruIzeYcdy9xGsKOdd/7JbRYp16/xKluLWx8L2qcoXzr1t1P5rokTOblEHldUiPYPauFkVg==
-  /@tsdotnet/type/1.0.8:
-    dependencies:
-      '@tsdotnet/common-interfaces': 1.0.4
-      tslib: 2.0.0
-    dev: false
-    resolution:
-      integrity: sha512-WM2L08BzBr2nD+m9YeNSrQsX5xw5TWuki+fbNDPkVPIMw8hFovhM65MQcFKIQAuHMZXqhFxBd/EoFvn28aBESw==
   /@types/chai/4.2.16:
     dev: true
     resolution:
@@ -2968,10 +2955,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
-  /tslib/2.0.0:
-    dev: false
-    resolution:
-      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /tslib/2.2.0:
     dev: false
     resolution:
@@ -3288,7 +3271,7 @@ specifiers:
   '@tsdotnet/common-interfaces': ^1.0.4
   '@tsdotnet/exceptions': ^1.0.17
   '@tsdotnet/key-value-pair': ^1.0.13
-  '@tsdotnet/ordered-registry': ^1.0.16
+  '@tsdotnet/ordered-registry': ^1.0.17
   '@tsdotnet/serialization': ^1.0.7
   '@tsdotnet/text-utility': ^1.0.27
   '@tsdotnet/type': ^1.0.11
