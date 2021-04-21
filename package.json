@@ -9,7 +9,7 @@
   "module": "dist-esm/index.js",
   "keywords": [],
   "scripts": {
-    "build:dist": "rimraf dist/* && copyfiles -u 1 src/**/*.d.ts dist && tsc",
+    "build:dist": "rimraf dist/* && tsc && copyfiles -u 1 src/**/*.d.ts dist",
     "build:dist-esm": "rimraf dist-esm/* && tsc -p tsconfig.esm.json",
     "build": "pnpm i && run-p build:*",
     "bump": "npm run precommit && npm version patch",
@@ -48,18 +48,17 @@
     "rimraf": "^3.0.2",
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.35",
-    "typedoc-plugin-external-module-name": "3.1.0",
     "typedoc-plugin-nojekyll": "^1.0.1",
     "typescript": "^4.2.4"
   },
   "dependencies": {
     "@tsdotnet/common-interfaces": "^1.0.4",
-    "@tsdotnet/exceptions": "^1.0.16",
-    "@tsdotnet/key-value-pair": "^1.0.11",
+    "@tsdotnet/exceptions": "^1.0.17",
+    "@tsdotnet/key-value-pair": "^1.0.13",
     "@tsdotnet/ordered-registry": "^1.0.16",
-    "@tsdotnet/serialization": "^1.0.5",
-    "@tsdotnet/text-utility": "^1.0.26",
-    "@tsdotnet/type": "^1.0.8",
-    "tslib": "^2.0.0"
+    "@tsdotnet/serialization": "^1.0.7",
+    "@tsdotnet/text-utility": "^1.0.27",
+    "@tsdotnet/type": "^1.0.11",
+    "tslib": "^2.2.0"
   }
 }

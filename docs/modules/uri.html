@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @tsdotnet/uri - v1.0.7">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -49,7 +50,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index.html">Globals</a>
+					<a href="../index.html">@tsdotnet/uri - v1.0.7</a>
 				</li>
 				<li>
 					<a href="uri.html">uri</a>
@@ -67,291 +68,73 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Namespaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-namespace tsd-parent-kind-module"><a href="uri.separator.html" class="tsd-kind-icon">Separator</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Enumerations</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/uri.fields.html" class="tsd-kind-icon">Fields</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/uri.querybuilder.html" class="tsd-kind-icon">Query<wbr>Builder</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/uri.uri-1.html" class="tsd-kind-icon">Uri</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/uri.uridotnet.html" class="tsd-kind-icon">Uri<wbr>Dot<wbr>Net</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/uri.urivalues.html" class="tsd-kind-icon">Uri<wbr>Values</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/uri.urnvalues.html" class="tsd-kind-icon">Urn<wbr>Values</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#encode" class="tsd-kind-icon">encode</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#encodevalue" class="tsd-kind-icon">encode<wbr>Value</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#isuricomponentformattable" class="tsd-kind-icon">is<wbr>Uri<wbr>Component<wbr>Formattable</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#parse" class="tsd-kind-icon">parse</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#parsetoarray" class="tsd-kind-icon">parse<wbr>ToArray</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="uri.html#parsetovalues" class="tsd-kind-icon">parse<wbr>ToValues</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/uri.default.html" class="tsd-kind-icon">default</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="encode" class="tsd-anchor"></a>
-					<h3>encode</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UriComponent.Values</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">QueryParam.IterableOrArrayLike</span>, prefixIfNotEmpty<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L37">src/query.ts:37</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Returns the encoded URI string</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>values: <span class="tsd-signature-type">UriComponent.Values</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">QueryParam.IterableOrArrayLike</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> prefixIfNotEmpty: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="encodevalue" class="tsd-anchor"></a>
-					<h3>encode<wbr>Value</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">encode<wbr>Value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UriComponent.Value</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L97">src/query.ts:97</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Converts any primitive, serializable or uri-component object to an encoded string.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">UriComponent.Value</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="isuricomponentformattable" class="tsd-anchor"></a>
-					<h3>is<wbr>Uri<wbr>Component<wbr>Formattable</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Uri<wbr>Component<wbr>Formattable<span class="tsd-signature-symbol">(</span>instance<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">instance</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Formattable</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L117">src/query.ts:117</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>A shortcut for identifying an UriComponent.Formattable object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>instance: <span class="tsd-signature-type">unknown</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">instance</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">Formattable</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="parse" class="tsd-anchor"></a>
-					<h3>parse</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, entryHandler<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span>, deserialize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, decodeValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L129">src/query.ts:129</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Parses a string for valid query param entries and pipes them through a handler.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>query: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>entryHandler: <span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-signature">
-											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>key: <span class="tsd-signature-type">string</span></h5>
-														</li>
-														<li>
-															<h5>value: <span class="tsd-signature-type">Primitive</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> deserialize: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> decodeValues: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="parsetoarray" class="tsd-anchor"></a>
-					<h3>parse<wbr>ToArray</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>ToArray<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, deserialize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, decodeValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">StringKeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L194">src/query.ts:194</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Parses a string for valid query params and returns a key-value pair array of the entries.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>query: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> deserialize: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> decodeValues: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">StringKeyValuePair</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="parsetovalues" class="tsd-anchor"></a>
-					<h3>parse<wbr>ToValues</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>ToValues<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, deserialize<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, decodeValues<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/d135d42/src/query.ts#L164">src/query.ts:164</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Parses a string for valid query params and returns a key-value map of the entries.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>query: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> deserialize: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> decodeValues: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Default is true.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
-							<ul class="tsd-parameters">
-								<li class="tsd-parameter-index-signature">
-									<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../index.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="../index.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module">
+								<a href="uri.separator.html">Separator</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module">
+								<a href="uri.default.html">default</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module">
+								<a href="uri.default.html">default</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module">
+								<a href="uri.default.html">default</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module">
+								<a href="uri.default.html">default</a>
+							</li>
+						</ul>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="uri.html">uri</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="uri.html">uri</a>
@@ -360,41 +143,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/uri.fields.html" class="tsd-kind-icon">Fields</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/uri.querybuilder.html" class="tsd-kind-icon">Query<wbr>Builder</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/uri.uri-1.html" class="tsd-kind-icon">Uri</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/uri.uridotnet.html" class="tsd-kind-icon">Uri<wbr>Dot<wbr>Net</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/uri.urivalues.html" class="tsd-kind-icon">Uri<wbr>Values</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/uri.urnvalues.html" class="tsd-kind-icon">Urn<wbr>Values</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#encode" class="tsd-kind-icon">encode</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#encodevalue" class="tsd-kind-icon">encode<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#isuricomponentformattable" class="tsd-kind-icon">is<wbr>Uri<wbr>Component<wbr>Formattable</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#parse" class="tsd-kind-icon">parse</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#parsetoarray" class="tsd-kind-icon">parse<wbr>ToArray</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="uri.html#parsetovalues" class="tsd-kind-icon">parse<wbr>ToValues</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/uri.default.html" class="tsd-kind-icon">default</a>
 					</li>
 				</ul>
 			</nav>
@@ -426,6 +179,5 @@
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>

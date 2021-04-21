@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UrnValues | @tsdotnet/uri - v1.0.7</title>
+	<title>default | @tsdotnet/uri - v1.0.7</title>
 	<meta name="description" content="Documentation for @tsdotnet/uri - v1.0.7">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,83 +56,107 @@
 					<a href="../modules/uri.html">uri</a>
 				</li>
 				<li>
-					<a href="uri.urnvalues.html">UrnValues</a>
+					<a href="uri.default.html">default</a>
 				</li>
 			</ul>
-			<h1>Interface UrnValues</h1>
+			<h1>Enumeration default</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p><a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">https://en.wikipedia.org/wiki/Uniform_Resource_Identifier</a></p>
-					</div>
-					<pre><code><span style="color: #000000">   urn:example:mammal:monotreme:</span><span style="color: #001080">echidna</span>
-<span style="color: #000000">   ??? ????????????????????????????????</span>
-<span style="color: #000000">  </span><span style="color: #001080">scheme</span><span style="color: #000000">             </span><span style="color: #001080">path</span>
-</code></pre>
-				</div>
-			</section>
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">UrnValues</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="uri.default.html" class="tsd-signature-type" data-tsd-kind="Interface">default</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uri.urnvalues.html#path" class="tsd-kind-icon">path</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uri.urnvalues.html#scheme" class="tsd-kind-icon">scheme</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="uri.default.html#basic" class="tsd-kind-icon">Basic</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="uri.default.html#dns" class="tsd-kind-icon">DNS</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="uri.default.html#ipv4" class="tsd-kind-icon">IPv4</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="uri.default.html#ipv6" class="tsd-kind-icon">IPv6</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="uri.default.html#unknown" class="tsd-kind-icon">Unknown</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="path" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> path</h3>
-					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="basic" class="tsd-anchor"></a>
+					<h3>Basic</h3>
+					<div class="tsd-signature tsd-kind-icon">Basic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriValues.d.ts#L34">UriValues.d.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriHostNameType.ts#L16">UriHostNameType.ts:16</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The absolute path of the URI.</p>
+							<p>The host is set, but the type cannot be determined.</p>
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="scheme" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> scheme</h3>
-					<div class="tsd-signature tsd-kind-icon">scheme<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../modules/uri.default.html#any" class="tsd-signature-type" data-tsd-kind="Type alias">Any</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="dns" class="tsd-anchor"></a>
+					<h3>DNS</h3>
+					<div class="tsd-signature tsd-kind-icon">DNS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriValues.d.ts#L29">UriValues.d.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriHostNameType.ts#L21">UriHostNameType.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The scheme name for this URI.</p>
+							<p>The host name is a domain name system (DNS) style host name.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="ipv4" class="tsd-anchor"></a>
+					<h3>IPv4</h3>
+					<div class="tsd-signature tsd-kind-icon">IPv4<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 2</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriHostNameType.ts#L26">UriHostNameType.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The host name is an Internet Protocol (IP) version 4 host address.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="ipv6" class="tsd-anchor"></a>
+					<h3>IPv6</h3>
+					<div class="tsd-signature tsd-kind-icon">IPv6<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriHostNameType.ts#L31">UriHostNameType.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The host name is an Internet Protocol (IP) version 6 host address.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="unknown" class="tsd-anchor"></a>
+					<h3>Unknown</h3>
+					<div class="tsd-signature tsd-kind-icon">Unknown<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = 4</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tsdotnet/uri/blob/a0ade76/src/UriHostNameType.ts#L36">UriHostNameType.ts:36</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The type of the host name is not supplied.</p>
 						</div>
 					</div>
 				</section>
@@ -168,10 +192,10 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/uri.html">uri</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/uri.html">uri</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/uri.html">uri</a>
 					</li>
 				</ul>
@@ -180,22 +204,28 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="uri.urnvalues.html" class="tsd-kind-icon">Urn<wbr>Values</a>
+					<li class="current tsd-kind-enum tsd-parent-kind-module">
+						<a href="uri.default.html" class="tsd-kind-icon">default</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uri.urnvalues.html#path" class="tsd-kind-icon">path</a>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="uri.default.html#basic" class="tsd-kind-icon">Basic</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uri.urnvalues.html#scheme" class="tsd-kind-icon">scheme</a>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="uri.default.html#dns" class="tsd-kind-icon">DNS</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="uri.default.html#ipv4" class="tsd-kind-icon">IPv4</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="uri.default.html#ipv6" class="tsd-kind-icon">IPv6</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="uri.default.html#unknown" class="tsd-kind-icon">Unknown</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="uri.default.html" class="tsd-kind-icon">default</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -210,11 +240,10 @@
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
