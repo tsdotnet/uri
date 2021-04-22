@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import QueryParam from './QueryParam';
 import UriComponent from './UriComponent';

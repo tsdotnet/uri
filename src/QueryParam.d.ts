@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
 import UriComponent from './UriComponent';

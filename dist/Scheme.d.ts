@@ -3,10 +3,6 @@
  * @license MIT
  * Based on: https://msdn.microsoft.com/en-us/library/system.uri.scheme%28v=vs.110%29.aspx
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import SchemeValue from './SchemeValue';
 declare namespace Scheme {
     /**

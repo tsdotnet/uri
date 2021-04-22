@@ -3,10 +3,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));

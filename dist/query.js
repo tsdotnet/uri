@@ -3,10 +3,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Separator = exports.parseToArray = exports.parseToValues = exports.parse = exports.isUriComponentFormattable = exports.encodeValue = exports.encode = void 0;
 const tslib_1 = require("tslib");

@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import extractKeyValue from '@tsdotnet/key-value-pair';
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import type from '@tsdotnet/type';

@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 
 import {Primitive} from '@tsdotnet/common-interfaces';
 import extractKeyValue from '@tsdotnet/key-value-pair';

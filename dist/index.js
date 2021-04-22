@@ -3,10 +3,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UriHostNameType = exports.Uri = exports.Scheme = exports.QueryBuilder = exports.query = void 0;
 const tslib_1 = require("tslib");

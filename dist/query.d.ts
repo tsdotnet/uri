@@ -2,10 +2,6 @@
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import { Primitive } from '@tsdotnet/common-interfaces';
 import { StringKeyValuePair } from '@tsdotnet/key-value-pair/dist/KeyValuePair';
 import QueryParam from './QueryParam';

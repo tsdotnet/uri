@@ -4,10 +4,6 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Fields = exports.Uri = void 0;
 const tslib_1 = require("tslib");

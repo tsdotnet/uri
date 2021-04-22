@@ -3,10 +3,6 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 
 import {Action, Primitive} from '@tsdotnet/common-interfaces';
 import Exception from '@tsdotnet/exceptions';

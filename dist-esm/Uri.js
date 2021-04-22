@@ -3,10 +3,6 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import ArgumentException from '@tsdotnet/exceptions/dist/ArgumentException';
 import ArgumentOutOfRangeException from '@tsdotnet/exceptions/dist/ArgumentOutOfRangeException';
 import { trim } from '@tsdotnet/text-utility/dist/Utility';

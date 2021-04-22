@@ -3,10 +3,6 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 import { Primitive } from '@tsdotnet/common-interfaces';
 import QueryParam from './QueryParam';
 import SchemeValue from './SchemeValue';

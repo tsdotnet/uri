@@ -3,10 +3,6 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-/**
- * @packageDocumentation
- * @module uri
- */
 
 import SchemeValue from './SchemeValue';
 
