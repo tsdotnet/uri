@@ -2,7 +2,7 @@ dependencies:
   '@tsdotnet/common-interfaces': 1.0.4
   '@tsdotnet/exceptions': 1.0.17
   '@tsdotnet/key-value-pair': 1.0.13
-  '@tsdotnet/ordered-registry': 1.0.18
+  '@tsdotnet/ordered-registry': 1.0.19
   '@tsdotnet/serialization': 1.0.7
   '@tsdotnet/text-utility': 1.0.27
   '@tsdotnet/type': 1.0.11
@@ -302,7 +302,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-m9bQG0w0a1yLHWioacAY3w3h0+n458b1wU/G1IdNM6ak/FMkevGBB1sPvg1FAGshuey+GJE6x+PQpmj+/zdiTQ==
-  /@tsdotnet/linked-node-list/1.3.16:
+  /@tsdotnet/linked-node-list/1.3.17:
     dependencies:
       '@tsdotnet/collection-base': 2.0.9
       '@tsdotnet/common-interfaces': 1.0.4
@@ -310,18 +310,18 @@ packages:
       tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-vqOYvisFmrPnCwHx+OiyvWU42m/Hxa40bWKZjubbEBbnzELzWJVHRla6rjYm2SoZ7+6LnPbOKFgMEZTpzIy/Cg==
-  /@tsdotnet/ordered-registry/1.0.18:
+      integrity: sha512-q1Dyun4OjUsp4KjUw1LAa44gRjc8qHf9HZAL1X7Y+lw1D4aXKb6kUyXl1rZTYYfALAuLJ8CmCk5Gq8zCf23gTQ==
+  /@tsdotnet/ordered-registry/1.0.19:
     dependencies:
       '@tsdotnet/collection-base': 2.0.9
       '@tsdotnet/common-interfaces': 1.0.4
       '@tsdotnet/compare': 1.3.17
       '@tsdotnet/exceptions': 1.0.17
-      '@tsdotnet/linked-node-list': 1.3.16
+      '@tsdotnet/linked-node-list': 1.3.17
       tslib: 2.2.0
     dev: false
     resolution:
-      integrity: sha512-rl+JXYAa5nRadCT9kvITuG271SYBG12aaAw2QGjb36uqChSjb0q0qiJ/LKgCuoGWk2uX39BVWEqYIVdcUazw9A==
+      integrity: sha512-Ridc5fOMTmyg0jd/Pzep+yFWnQs1GGUgqho4zwM5M6bRqin8z6JG0xHmSjni7RzAtZrwcMdOZcPF1G3/3pQXfg==
   /@tsdotnet/serialization/1.0.7:
     dependencies:
       '@tsdotnet/common-interfaces': 1.0.4
@@ -3271,7 +3271,7 @@ specifiers:
   '@tsdotnet/common-interfaces': ^1.0.4
   '@tsdotnet/exceptions': ^1.0.17
   '@tsdotnet/key-value-pair': ^1.0.13
-  '@tsdotnet/ordered-registry': ^1.0.18
+  '@tsdotnet/ordered-registry': ^1.0.19
   '@tsdotnet/serialization': ^1.0.7
   '@tsdotnet/text-utility': ^1.0.27
   '@tsdotnet/type': ^1.0.11
