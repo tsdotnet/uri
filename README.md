@@ -8,4 +8,4 @@
 
 ## Docs
 
-[tsdotnet.github.io/uri](https://tsdotnet.github.io/uri/modules/uri.html)
+[tsdotnet.github.io/uri](https://tsdotnet.github.io/uri/)

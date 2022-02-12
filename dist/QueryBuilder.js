@@ -5,9 +5,9 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));
-const ordered_registry_1 = tslib_1.__importDefault(require("@tsdotnet/ordered-registry"));
-const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
+const key_value_pair_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/key-value-pair"));
+const ordered_registry_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/ordered-registry"));
+const type_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/type"));
 const query_1 = require("./query");
 /**
  * Provides a means for parsing and building a set of parameters.
@@ -40,7 +40,7 @@ class QueryBuilder extends ordered_registry_1.default {
         }
         else if (type_1.default.isIterable(query)) {
             for (const entry of query) {
-                key_value_pair_1.default(entry, (key, value) => { this.import(key, value); });
+                (0, key_value_pair_1.default)(entry, (key, value) => { this.import(key, value); });
             }
         }
         else {
@@ -102,14 +102,14 @@ class QueryBuilder extends ordered_registry_1.default {
      * @returns {QueryBuilder}
      */
     importFromString(values, deserialize = true, decodeValues = true) {
-        query_1.parse(values, (key, value) => { this.importSingle(key, value); }, deserialize, decodeValues);
+        (0, query_1.parse)(values, (key, value) => { this.importSingle(key, value); }, deserialize, decodeValues);
         return this;
     }
     /**
      * Returns the encoded URI string
      */
     encode(prefixIfNotEmpty) {
-        return query_1.encode(this, prefixIfNotEmpty);
+        return (0, query_1.encode)(this, prefixIfNotEmpty);
     }
     toString() {
         return this.encode();

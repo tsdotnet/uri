@@ -7,11 +7,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Fields = exports.Uri = void 0;
 const tslib_1 = require("tslib");
-const ArgumentException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/ArgumentException"));
-const ArgumentOutOfRangeException_1 = tslib_1.__importDefault(require("@tsdotnet/exceptions/dist/ArgumentOutOfRangeException"));
+const ArgumentException_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/exceptions/dist/ArgumentException"));
+const ArgumentOutOfRangeException_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/exceptions/dist/ArgumentOutOfRangeException"));
 const Utility_1 = require("@tsdotnet/text-utility/dist/Utility");
 const query_1 = require("./query");
-const Scheme_1 = tslib_1.__importDefault(require("./Scheme"));
+const Scheme_1 = (0, tslib_1.__importDefault)(require("./Scheme"));
 const VOID0 = void 0;
 /**
  * Provides an read-only model representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
@@ -37,12 +37,10 @@ class Uri {
         this.authority = _.getAuthority() || null;
         this.path = path || null;
         if (query && typeof query !== 'string')
-            query = query_1.encode(query);
+            query = (0, query_1.encode)(query);
         this.query = formatQuery(query) || null;
-        Object.freeze(this.queryParams
-            = _.query
-                ? query_1.parseToValues(_.query)
-                : {});
+        Object.freeze(this.queryParams = _.query
+            ? (0, query_1.parseToValues)(_.query) : {});
         this.pathAndQuery = _.getPathAndQuery() || null;
         this.fragment = formatFragment(fragment) || null;
         // This should validate the uri...
@@ -198,7 +196,7 @@ function getScheme(scheme) {
     if (typeof s === 'string') {
         if (!s)
             return null;
-        s = Utility_1.trim(s)
+        s = (0, Utility_1.trim)(s)
             .toLowerCase()
             .replace(/[^a-z0-9+.-]+$/g, EMPTY);
         if (!s)
@@ -303,11 +301,11 @@ function tryParse(url, out) {
     // Guarantees a separation.
     i = url.indexOf(SLASH2);
     if (i != -1) {
-        let scheme = Utility_1.trim(url.substring(0, i));
+        let scheme = (0, Utility_1.trim)(url.substring(0, i));
         const c = /:$/;
         if (!c.test(scheme))
             return new ArgumentException_1.default('url', 'Scheme was improperly formatted');
-        scheme = Utility_1.trim(scheme.replace(c, EMPTY));
+        scheme = (0, Utility_1.trim)(scheme.replace(c, EMPTY));
         try {
             result.scheme = getScheme(scheme) || VOID0;
         }
@@ -331,13 +329,13 @@ function tryParse(url, out) {
     // Remaining is host and port.
     i = url.indexOf(':');
     if (i != -1) {
-        const port = parseInt(Utility_1.trim(url.substring(i + 1)));
+        const port = parseInt((0, Utility_1.trim)(url.substring(i + 1)));
         if (isNaN(port))
             return new ArgumentException_1.default('url', 'Port was invalid.');
         result.port = port;
         url = url.substring(0, i);
     }
-    url = Utility_1.trim(url);
+    url = (0, Utility_1.trim)(url);
     if (url)
         result.host = url;
     out(copyUri(result));

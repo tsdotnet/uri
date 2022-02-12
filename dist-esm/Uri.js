@@ -35,10 +35,8 @@ export class Uri {
         if (query && typeof query !== 'string')
             query = encode(query);
         this.query = formatQuery(query) || null;
-        Object.freeze(this.queryParams
-            = _.query
-                ? parseToValues(_.query)
-                : {});
+        Object.freeze(this.queryParams = _.query
+            ? parseToValues(_.query) : {});
         this.pathAndQuery = _.getPathAndQuery() || null;
         this.fragment = formatFragment(fragment) || null;
         // This should validate the uri...

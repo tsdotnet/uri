@@ -10,7 +10,7 @@ type QueryParamIterable
 	= Iterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;
 
 type QueryParamArrayLike
-	= ArrayLike<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>
+	= ArrayLike<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;
 
 declare namespace QueryParam
 {

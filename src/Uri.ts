@@ -23,7 +23,7 @@ const VOID0: undefined = void 0;
  * The read-only model (frozen) is easier for debugging than exposing accessors for each property.
  */
 export class Uri
-	implements UriValues
+implements UriValues
 {
 	readonly scheme: SchemeValue.Any | null;
 	readonly userInfo: string | null;
@@ -85,10 +85,8 @@ export class Uri
 			query = encode(query);
 
 		this.query = formatQuery(query) || null;
-		Object.freeze(this.queryParams
-			= _.query
-			? parseToValues(_.query)
-			: {});
+		Object.freeze(this.queryParams = _.query
+			? parseToValues(_.query): {});
 
 		this.pathAndQuery = _.getPathAndQuery() || null;
 
@@ -149,9 +147,9 @@ export class Uri
 	 * @param url The url to parse.
 	 * @returns {UriValues} Will throw an exception if not able to parse.
 	 */
-	static parse (url: string): UriValues
+	static parse (url: string): UriValues;
 
-	static parse (url: string, throwIfInvalid: true): UriValues
+	static parse (url: string, throwIfInvalid: true): UriValues;
 
 	/**
 	 * Parses a URL into it's components.
@@ -159,7 +157,7 @@ export class Uri
 	 * @param throwIfInvalid Defaults to true.
 	 * @returns {UriValues} Returns a map of the values or *null* if invalid and *throwIfInvalid* is <b>false</b>.
 	 */
-	static parse (url: string, throwIfInvalid: boolean): UriValues | null
+	static parse (url: string, throwIfInvalid: boolean): UriValues | null;
 
 	static parse (url: string, throwIfInvalid: boolean = true): UriValues | null
 	{
@@ -467,7 +465,7 @@ function tryParse (url: string, out: Action<UriValues>): null | Exception
 		{
 			result.scheme = getScheme(scheme) || VOID0;
 		}
-		catch(ex)
+		catch(ex:any)
 		{
 			return ex;
 		}
