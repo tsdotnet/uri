@@ -5,9 +5,9 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const key_value_pair_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/key-value-pair"));
-const ordered_registry_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/ordered-registry"));
-const type_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/type"));
+const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));
+const ordered_registry_1 = tslib_1.__importDefault(require("@tsdotnet/ordered-registry"));
+const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 const query_1 = require("./query");
 /**
  * Provides a means for parsing and building a set of parameters.

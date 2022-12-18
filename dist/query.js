@@ -6,9 +6,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Separator = exports.parseToArray = exports.parseToValues = exports.parse = exports.isUriComponentFormattable = exports.encodeValue = exports.encode = void 0;
 const tslib_1 = require("tslib");
-const key_value_pair_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/key-value-pair"));
-const Serialize = (0, tslib_1.__importStar)(require("@tsdotnet/serialization"));
-const type_1 = (0, tslib_1.__importDefault)(require("@tsdotnet/type"));
+const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));
+const Serialize = tslib_1.__importStar(require("@tsdotnet/serialization"));
+const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
 /*
  * This module is provided as a lighter weight utility for acquiring query params.
  * If more detailed operations are necessary, consider importing QueryBuilder.
