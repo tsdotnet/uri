@@ -4,7 +4,7 @@
  */
 
 import {Primitive} from '@tsdotnet/common-interfaces';
-import Serializable from '@tsdotnet/serialization/dist/Serializable';
+import {Serializable} from '@tsdotnet/serialization';
 
 declare namespace UriComponent
 {

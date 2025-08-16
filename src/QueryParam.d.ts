@@ -3,7 +3,7 @@
  * @license MIT
  */
 
-import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import UriComponent from './UriComponent';
 
 type QueryParamIterable

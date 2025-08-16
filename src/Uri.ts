@@ -5,11 +5,9 @@
  */
 
 import {Action, Primitive} from '@tsdotnet/common-interfaces';
-import Exception from '@tsdotnet/exceptions';
-import ArgumentException from '@tsdotnet/exceptions/dist/ArgumentException';
-import ArgumentOutOfRangeException from '@tsdotnet/exceptions/dist/ArgumentOutOfRangeException';
-import {trim} from '@tsdotnet/text-utility/dist/Utility';
+import {Exception, ArgumentException, ArgumentOutOfRangeException} from '@tsdotnet/exceptions';
 import {encode, parseToValues, Separator} from './query';
+import {trim} from '@tsdotnet/text-utility';
 import QueryParam from './QueryParam';
 import Scheme from './Scheme';
 import SchemeValue from './SchemeValue';
@@ -69,14 +67,13 @@ implements UriValues
 		query?: QueryParam.Convertible,
 		fragment?: string)
 	{
-		const _ = this;
 		this.scheme = getScheme(scheme) || null;
 		this.userInfo = userInfo || null;
 		this.host = host || null;
 
 		this.port = getPort(port);
 
-		this.authority = _.getAuthority() || null;
+		this.authority = this.getAuthority() || null;
 
 		this.path = path || null;
 
@@ -85,17 +82,17 @@ implements UriValues
 			query = encode(query);
 
 		this.query = formatQuery(query) || null;
-		Object.freeze(this.queryParams = _.query
-			? parseToValues(_.query): {});
+		Object.freeze(this.queryParams = this.query
+			? parseToValues(this.query): {});
 
-		this.pathAndQuery = _.getPathAndQuery() || null;
+		this.pathAndQuery = this.getPathAndQuery() || null;
 
 		this.fragment = formatFragment(fragment) || null;
 
 		// This should validate the uri...
-		this.absoluteUri = _.getAbsoluteUri();
+		this.absoluteUri = this.getAbsoluteUri();
 
-		this.baseUri = _.absoluteUri.replace(/[?#].*/, '');
+		this.baseUri = this.absoluteUri.replace(/[?#].*/, '');
 
 		// Intended to be read-only.  Call .toMap() to get a writable copy.
 		Object.freeze(this);

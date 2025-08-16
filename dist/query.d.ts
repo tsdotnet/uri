@@ -3,7 +3,7 @@
  * @license MIT
  */
 import { Primitive } from '@tsdotnet/common-interfaces';
-import { StringKeyValuePair } from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import { StringKeyValuePair } from '@tsdotnet/key-value-pair';
 import QueryParam from './QueryParam';
 import UriComponent from './UriComponent';
 /**

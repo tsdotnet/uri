@@ -4,7 +4,13 @@
  * @license MIT
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Separator = exports.parseToArray = exports.parseToValues = exports.parse = exports.isUriComponentFormattable = exports.encodeValue = exports.encode = void 0;
+exports.Separator = void 0;
+exports.encode = encode;
+exports.encodeValue = encodeValue;
+exports.isUriComponentFormattable = isUriComponentFormattable;
+exports.parse = parse;
+exports.parseToValues = parseToValues;
+exports.parseToArray = parseToArray;
 const tslib_1 = require("tslib");
 const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));
 const Serialize = tslib_1.__importStar(require("@tsdotnet/serialization"));
@@ -40,7 +46,6 @@ function encode(values, prefixIfNotEmpty) {
     return (entries.length && prefixIfNotEmpty ? QUERY_SEPARATOR : EMPTY)
         + entries.join(ENTRY_SEPARATOR);
 }
-exports.encode = encode;
 function appendKeyValueSingle(entries, key, value) {
     entries.push(key + KEY_VALUE_SEPARATOR + encodeValue(value));
 }
@@ -71,7 +76,6 @@ function encodeValue(value) {
         return encodeURIComponent(Serialize.toString(value));
     }
 }
-exports.encodeValue = encodeValue;
 /**
  * A shortcut for identifying an UriComponent.Formattable object.
  * @param instance
@@ -80,7 +84,6 @@ exports.encodeValue = encodeValue;
 function isUriComponentFormattable(instance) {
     return type_1.default.hasMemberOfType(instance, TO_URI_COMPONENT, 'function');
 }
-exports.isUriComponentFormattable = isUriComponentFormattable;
 /**
  * Parses a string for valid query param entries and pipes them through a handler.
  * @param query
@@ -109,7 +112,6 @@ function parse(query, entryHandler, deserialize = true, decodeValues = true) {
         }
     }
 }
-exports.parse = parse;
 /**
  * Parses a string for valid query params and returns a key-value map of the entries.
  * @param {string} query
@@ -131,7 +133,6 @@ function parseToValues(query, deserialize = true, decodeValues = true) {
     }, deserialize, decodeValues);
     return result;
 }
-exports.parseToValues = parseToValues;
 /**
  * Parses a string for valid query params and returns a key-value pair array of the entries.
  * @param query
@@ -144,12 +145,11 @@ function parseToArray(query, deserialize = true, decodeValues = true) {
     parse(query, (key, value) => { result.push({ key: key, value: value }); }, deserialize, decodeValues);
     return result;
 }
-exports.parseToArray = parseToArray;
 var Separator;
 (function (Separator) {
     Separator.Query = QUERY_SEPARATOR;
     Separator.Entry = ENTRY_SEPARATOR;
     Separator.KeyValue = KEY_VALUE_SEPARATOR;
-})(Separator = exports.Separator || (exports.Separator = {}));
+})(Separator || (exports.Separator = Separator = {}));
 Object.freeze(Separator);
 //# sourceMappingURL=query.js.map

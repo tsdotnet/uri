@@ -5,7 +5,7 @@
 
 import {Primitive} from '@tsdotnet/common-interfaces';
 import extractKeyValue from '@tsdotnet/key-value-pair';
-import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import * as Serialize from '@tsdotnet/serialization';
 import type from '@tsdotnet/type';
 import QueryParam from './QueryParam';

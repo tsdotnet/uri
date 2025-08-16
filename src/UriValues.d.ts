@@ -72,4 +72,5 @@ export default interface UriValues
 	 * The escaped URI fragment.
 	 */
 	fragment?: string | null;
+	// eslint-disable-next-line semi
 }

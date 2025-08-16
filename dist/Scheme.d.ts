@@ -61,7 +61,7 @@ declare namespace Scheme {
      * An index of possible values to validate against.
      * @type {Array}
      */
-    const All: readonly ("file" | "nntp" | "news" | "gopher" | "ftp" | "http" | "https" | "ldap" | "mailto" | "net.pipe" | "net.tcp" | "telnet" | "uuid")[];
+    const All: readonly ("file" | "ftp" | "gopher" | "http" | "https" | "ldap" | "mailto" | "net.pipe" | "net.tcp" | "nntp" | "news" | "telnet" | "uuid")[];
     function isValid(scheme: string): scheme is SchemeValue.Any;
 }
 export default Scheme;

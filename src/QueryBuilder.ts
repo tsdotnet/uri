@@ -4,7 +4,7 @@
  */
 
 import extractKeyValue from '@tsdotnet/key-value-pair';
-import {StringKeyValuePair} from '@tsdotnet/key-value-pair/dist/KeyValuePair';
+import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import type from '@tsdotnet/type';
 import {encode, parse} from './query';

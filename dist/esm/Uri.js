@@ -3,10 +3,9 @@
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-import ArgumentException from '@tsdotnet/exceptions/dist/ArgumentException';
-import ArgumentOutOfRangeException from '@tsdotnet/exceptions/dist/ArgumentOutOfRangeException';
-import { trim } from '@tsdotnet/text-utility/dist/Utility';
+import { ArgumentException, ArgumentOutOfRangeException } from '@tsdotnet/exceptions';
 import { encode, parseToValues, Separator } from './query';
+import { trim } from '@tsdotnet/text-utility';
 import Scheme from './Scheme';
 const VOID0 = void 0;
 /**
@@ -15,6 +14,30 @@ const VOID0 = void 0;
  * The read-only model (frozen) is easier for debugging than exposing accessors for each property.
  */
 export class Uri {
+    scheme;
+    userInfo;
+    host;
+    port;
+    path;
+    query;
+    fragment;
+    queryParams;
+    /**
+     * The absolute URI.
+     */
+    absoluteUri;
+    /**
+     * Gets the Domain Name System (DNS) host name or IP address and the port number for a server.
+     */
+    authority;
+    /**
+     * Gets the path and Query properties separated by a question mark (?).
+     */
+    pathAndQuery;
+    /**
+     * Gets the full path without the query or fragment.
+     */
+    baseUri;
     /**
      * @param scheme The user name, password, or other user-specific information associated with the specified URI.
      * @param userInfo The host component of this instance.
@@ -25,23 +48,22 @@ export class Uri {
      * @param fragment The escaped URI fragment.
      */
     constructor(scheme, userInfo, host, port, path, query, fragment) {
-        const _ = this;
         this.scheme = getScheme(scheme) || null;
         this.userInfo = userInfo || null;
         this.host = host || null;
         this.port = getPort(port);
-        this.authority = _.getAuthority() || null;
+        this.authority = this.getAuthority() || null;
         this.path = path || null;
         if (query && typeof query !== 'string')
             query = encode(query);
         this.query = formatQuery(query) || null;
-        Object.freeze(this.queryParams = _.query
-            ? parseToValues(_.query) : {});
-        this.pathAndQuery = _.getPathAndQuery() || null;
+        Object.freeze(this.queryParams = this.query
+            ? parseToValues(this.query) : {});
+        this.pathAndQuery = this.getPathAndQuery() || null;
         this.fragment = formatFragment(fragment) || null;
         // This should validate the uri...
-        this.absoluteUri = _.getAbsoluteUri();
-        this.baseUri = _.absoluteUri.replace(/[?#].*/, '');
+        this.absoluteUri = this.getAbsoluteUri();
+        this.baseUri = this.absoluteUri.replace(/[?#].*/, '');
         // Intended to be read-only.  Call .toMap() to get a writable copy.
         Object.freeze(this);
     }

@@ -99,4 +99,5 @@ export default interface UriDotNet
 	userEscaped: boolean;
 
 
+	// eslint-disable-next-line semi
 }
