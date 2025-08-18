@@ -4,7 +4,7 @@
  * Based on: https://msdn.microsoft.com/en-us/library/system.uri.scheme%28v=vs.110%29.aspx
  */
 
-import SchemeValue from './SchemeValue';
+import type SchemeValue from './SchemeValue';
 
 namespace Scheme
 {

@@ -3,8 +3,8 @@
  * @license MIT
  */
 
-import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
-import UriComponent from './UriComponent';
+import type {StringKeyValuePair} from '@tsdotnet/key-value-pair';
+import type UriComponent from './UriComponent';
 
 type QueryParamIterable
 	= Iterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;

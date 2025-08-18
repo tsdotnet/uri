@@ -3,13 +3,13 @@
  * @license MIT
  */
 
-import {Primitive} from '@tsdotnet/common-interfaces';
+import type {Primitive} from '@tsdotnet/common-interfaces';
 import extractKeyValue from '@tsdotnet/key-value-pair';
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import * as Serialize from '@tsdotnet/serialization';
 import type from '@tsdotnet/type';
-import QueryParam from './QueryParam';
-import UriComponent from './UriComponent';
+import type QueryParam from './QueryParam';
+import type UriComponent from './UriComponent';
 
 /*
  * This module is provided as a lighter weight utility for acquiring query params.

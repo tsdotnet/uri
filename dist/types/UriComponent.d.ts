@@ -3,8 +3,8 @@
  * @license MIT
  */
 
-import {Primitive} from '@tsdotnet/common-interfaces';
-import {Serializable} from '@tsdotnet/serialization';
+import type {Primitive} from '@tsdotnet/common-interfaces';
+import type {Serializable} from '@tsdotnet/serialization';
 
 declare namespace UriComponent
 {

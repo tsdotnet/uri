@@ -1,11 +1,7 @@
-/*!
- * @author electricessence / https://github.com/electricessence/
- * @license MIT
- */
-import * as query from './query';
-import QueryBuilder from './QueryBuilder';
-import Scheme from './Scheme';
-import Uri from './Uri';
-import UriHostNameType from './UriHostNameType';
-export { query, QueryBuilder, Scheme, Uri, UriHostNameType };
+import * as query from './query.js';
+export { query };
+export { default as QueryBuilder } from './QueryBuilder.js';
+export { default as Scheme } from './Scheme.js';
+export { Uri } from './Uri.js';
+export { default as UriHostNameType } from './UriHostNameType.js';
 //# sourceMappingURL=index.js.map

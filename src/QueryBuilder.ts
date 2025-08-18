@@ -8,8 +8,8 @@ import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import type from '@tsdotnet/type';
 import {encode, parse} from './query';
-import QueryParam from './QueryParam';
-import UriComponent from './UriComponent';
+import type QueryParam from './QueryParam';
+import type UriComponent from './UriComponent';
 
 /**
  * Provides a means for parsing and building a set of parameters.
@@ -126,7 +126,7 @@ export default class QueryBuilder
 	{
 		for(const key of Object.keys(values))
 		{
-			this.import(key, values[key]);
+			this.import(key, values[key]!);
 		}
 		return this;
 	}

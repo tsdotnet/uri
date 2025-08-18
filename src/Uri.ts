@@ -8,10 +8,10 @@ import {Action, Primitive} from '@tsdotnet/common-interfaces';
 import {Exception, ArgumentException, ArgumentOutOfRangeException} from '@tsdotnet/exceptions';
 import {encode, parseToValues, Separator} from './query';
 import {trim} from '@tsdotnet/text-utility';
-import QueryParam from './QueryParam';
+import type QueryParam from './QueryParam';
 import Scheme from './Scheme';
-import SchemeValue from './SchemeValue';
-import UriValues from './UriValues';
+import type SchemeValue from './SchemeValue';
+import type UriValues from './UriValues';
 
 const VOID0: undefined = void 0;
 

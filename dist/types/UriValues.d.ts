@@ -22,12 +22,12 @@ export interface UrnValues
 	/**
 	 * The scheme name for this URI.
 	 */
-	scheme?: SchemeValue.Any | null; // string literal
+	scheme?: SchemeValue.Any | null | undefined; // string literal
 
 	/**
 	 * The absolute path of the URI.
 	 */
-	path?: string | null;
+	path?: string | null | undefined;
 
 }
 
@@ -51,26 +51,26 @@ export default interface UriValues
 	/**
 	 * The user name, password, or other user-specific information associated with the specified URI.
 	 */
-	userInfo?: string | null;
+	userInfo?: string | null | undefined;
 
 	/**
 	 * The host component of this instance.
 	 */
-	host?: string | null;
+	host?: string | null | undefined;
 
 	/**
 	 * The port number of this URI.
 	 */
-	port?: number | null;
+	port?: number | null | undefined;
 
 	/**
 	 * Gets any query information included in the specified URI.
 	 */
-	query?: string | null;
+	query?: string | null | undefined;
 
 	/**
 	 * The escaped URI fragment.
 	 */
-	fragment?: string | null;
+	fragment?: string | null | undefined;
 	// eslint-disable-next-line semi
 }

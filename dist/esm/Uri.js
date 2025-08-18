@@ -1,19 +1,15 @@
+import { ArgumentOutOfRangeException, ArgumentException } from '@tsdotnet/exceptions';
+import { Separator, encode, parseToValues } from './query.js';
+import { trim } from '@tsdotnet/text-utility';
+import Scheme from './Scheme.js';
+
 /*!
  * @author electricessence / https://github.com/electricessence/
  * @license MIT
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
-import { ArgumentException, ArgumentOutOfRangeException } from '@tsdotnet/exceptions';
-import { encode, parseToValues, Separator } from './query';
-import { trim } from '@tsdotnet/text-utility';
-import Scheme from './Scheme';
 const VOID0 = void 0;
-/**
- * Provides an read-only model representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
- *
- * The read-only model (frozen) is easier for debugging than exposing accessors for each property.
- */
-export class Uri {
+class Uri {
     scheme;
     userInfo;
     host;
@@ -22,31 +18,10 @@ export class Uri {
     query;
     fragment;
     queryParams;
-    /**
-     * The absolute URI.
-     */
     absoluteUri;
-    /**
-     * Gets the Domain Name System (DNS) host name or IP address and the port number for a server.
-     */
     authority;
-    /**
-     * Gets the path and Query properties separated by a question mark (?).
-     */
     pathAndQuery;
-    /**
-     * Gets the full path without the query or fragment.
-     */
     baseUri;
-    /**
-     * @param scheme The user name, password, or other user-specific information associated with the specified URI.
-     * @param userInfo The host component of this instance.
-     * @param host The port number of this URI.
-     * @param port The absolute path of the URI.
-     * @param path The absolute path of the URI.
-     * @param query Any query information included in the specified URI.
-     * @param fragment The escaped URI fragment.
-     */
     constructor(scheme, userInfo, host, port, path, query, fragment) {
         this.scheme = getScheme(scheme) || null;
         this.userInfo = userInfo || null;
@@ -61,35 +36,18 @@ export class Uri {
             ? parseToValues(this.query) : {});
         this.pathAndQuery = this.getPathAndQuery() || null;
         this.fragment = formatFragment(fragment) || null;
-        // This should validate the uri...
         this.absoluteUri = this.getAbsoluteUri();
         this.baseUri = this.absoluteUri.replace(/[?#].*/, '');
-        // Intended to be read-only.  Call .toMap() to get a writable copy.
         Object.freeze(this);
     }
-    /**
-     * The segments that represent a path.<br/>
-     * https://msdn.microsoft.com/en-us/library/system.uri.segments%28v=vs.110%29.aspx
-     *
-     * <h5><b>Example:</b></h5>
-     * If the path value equals: ```/tree/node/index.html```<br/>
-     * The result will be: ```['/','tree/','node/','index.html']```
-     * @returns {string[]}
-     */
     get pathSegments() {
         return this.path
             && this.path.match(/^[/]|[^/]*[/]|[^/]+$/g)
             || [];
     }
-    /**
-     * Parses or clones values from existing Uri values.
-     * @param uri
-     * @param defaults
-     * @returns {Uri}
-     */
     static from(uri, defaults) {
         const u = typeof uri === 'string'
-            ? Uri.parse(uri) // Parsing a string should throw errors.  Null or undefined simply means empty.
+            ? Uri.parse(uri)
             : uri;
         return new Uri(u && u.scheme || defaults && defaults.scheme, u && u.userInfo || defaults && defaults.userInfo, u && u.host || defaults && defaults.host, u && typeof u.port === 'number' && !isNaN(u.port)
             ? u.port
@@ -102,46 +60,20 @@ export class Uri {
             throw ex;
         return result;
     }
-    /**
-     * Parses a URL into it's components.
-     * @param url The url to parse.
-     * @param out A delegate to capture the value.
-     * @returns {boolean} True if valid.  False if invalid.
-     */
     static tryParse(url, out) {
-        return !tryParse(url, out); // return type is Exception.
+        return !tryParse(url, out);
     }
-    /**
-     * Returns a copy of the specified Uri.
-     * @param {UriValues} map
-     * @return {UriValues}
-     */
     static copyOf(map) {
         return copyUri(map);
     }
-    /**
-     * Properly converts an existing URI to a string.
-     * @param uri
-     * @returns {string}
-     */
     static toString(uri) {
         return uri instanceof Uri
             ? uri.absoluteUri
             : uriToString(uri);
     }
-    /**
-     * Returns the authority segment of an URI.
-     * @param uri
-     * @returns {string}
-     */
     static getAuthority(uri) {
         return getAuthority(uri);
     }
-    /**
-     *  Compares the values of another IUri via toString comparison.
-     * @param other
-     * @returns {boolean}
-     */
     equals(other) {
         return this === other || this.absoluteUri == Uri.toString(other);
     }
@@ -153,39 +85,23 @@ export class Uri {
         values.query = query;
         return Uri.from(values);
     }
-    /**
-     * Creates a writable copy.
-     * @returns {UriValues}
-     */
     toValues() {
         return this.copyTo({});
     }
-    /**
-     * @returns {string} The full absolute uri.
-     */
     toString() {
         return this.absoluteUri;
     }
-    /**
-     * Is provided for sub classes to override this value.
-     */
     getAbsoluteUri() {
         return uriToString(this);
     }
-    /**
-     * Is provided for sub classes to override this value.
-     */
     getAuthority() {
         return getAuthority(this);
     }
-    /**
-     * Is provided for sub classes to override this value.
-     */
     getPathAndQuery() {
         return getPathAndQuery(this);
     }
 }
-export var Fields;
+var Fields;
 (function (Fields) {
     Fields[Fields["scheme"] = 0] = "scheme";
     Fields[Fields["userInfo"] = 1] = "userInfo";
@@ -253,9 +169,6 @@ function getAuthority(uri) {
         if (typeof uri.port === 'number' && !isNaN(uri.port))
             throw new ArgumentException('host', 'Cannot include a port when there is no host.');
     }
-    /*
-     * [//[user:password@]host[:port]]
-     */
     let result = uri.host || EMPTY;
     if (result) {
         if (uri.userInfo)
@@ -279,8 +192,6 @@ function getPathAndQuery(uri) {
         + (formatQuery(query) || EMPTY);
 }
 function uriToString(uri) {
-    // scheme:[//[user:password@]domain[:port]][/]path[?query][#fragment]
-    // {scheme}{authority}{path}{query}{fragment}
     const scheme = getScheme(uri.scheme);
     const authority = getAuthority(uri), pathAndQuery = getPathAndQuery(uri), fragment = formatFragment(uri.fragment);
     const part1 = EMPTY
@@ -298,24 +209,18 @@ function uriToString(uri) {
 function tryParse(url, out) {
     if (!url)
         return new ArgumentException('url', 'Nothing to parse.');
-    // Could use a regex here, but well follow some rules instead.
-    // The intention is to 'gather' the pieces.  This isn't validation (yet).
-    // scheme:[//[user:password@]domain[:port]][/]path[?query][#fragment]
     let i;
     const result = {};
-    // Anything after the first # is the fragment.
     i = url.indexOf(HASH);
     if (i != -1) {
         result.fragment = url.substring(i + 1) || VOID0;
         url = url.substring(0, i);
     }
-    // Anything after the first ? is the query.
     i = url.indexOf(QM);
     if (i != -1) {
         result.query = url.substring(i + 1) || VOID0;
         url = url.substring(0, i);
     }
-    // Guarantees a separation.
     i = url.indexOf(SLASH2);
     if (i != -1) {
         let scheme = trim(url.substring(0, i));
@@ -331,19 +236,16 @@ function tryParse(url, out) {
         }
         url = url.substring(i + 2);
     }
-    // Find any path information.
     i = url.indexOf(SLASH);
     if (i != -1) {
         result.path = url.substring(i);
         url = url.substring(0, i);
     }
-    // Separate user info.
     i = url.indexOf(AT);
     if (i != -1) {
         result.userInfo = url.substring(0, i) || VOID0;
         url = url.substring(i + 1);
     }
-    // Remaining is host and port.
     i = url.indexOf(':');
     if (i != -1) {
         const port = parseInt(trim(url.substring(i + 1)));
@@ -356,8 +258,8 @@ function tryParse(url, out) {
     if (url)
         result.host = url;
     out(copyUri(result));
-    // null is good! (here)
     return null;
 }
-export default Uri;
+
+export { Fields, Uri, Uri as default };
 //# sourceMappingURL=Uri.js.map

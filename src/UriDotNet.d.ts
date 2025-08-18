@@ -4,8 +4,8 @@
  * Based on: https://msdn.microsoft.com/en-us/library/system.uri%28v=vs.110%29.aspx
  */
 
-import UriHostNameType from './UriHostNameType';
-import IUri from './UriValues';
+import type UriHostNameType from './UriHostNameType';
+import type IUri from './UriValues';
 
 /**
  * Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
