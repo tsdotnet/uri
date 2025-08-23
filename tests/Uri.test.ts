@@ -5,7 +5,11 @@ import Uri from '../src/Uri';
 const pathAfterRoot = 'one/two/three.html';
 const path = '/' + pathAfterRoot;
 const params = [['four', 'five'], ['six', 'seven']];
-const query = '?' + params[0].join('=') + '&' + params[1].join('=');
+const firstParam = params[0];
+const secondParam = params[1];
+expect(firstParam).toBeDefined();
+expect(secondParam).toBeDefined();
+const query = '?' + firstParam!.join('=') + '&' + secondParam!.join('=');
 
 // eslint-disable-next-line @typescript-eslint/no-empty-function,@typescript-eslint/explicit-function-return-type
 const BLANK = ()=>{};
@@ -265,8 +269,18 @@ describe('.queryParams', ()=>
 {
 	it('should equal contain correct values', ()=>
 	{
-		expect(u.queryParams[params[0][0]]).toBe(params[0][1]);
-		expect(u.queryParams[params[1][0]]).toBe(params[1][1]);
+		const firstParamKey = params[0]?.[0];
+		const firstParamValue = params[0]?.[1];
+		const secondParamKey = params[1]?.[0];
+		const secondParamValue = params[1]?.[1];
+		
+		expect(firstParamKey).toBeDefined();
+		expect(firstParamValue).toBeDefined();
+		expect(secondParamKey).toBeDefined();
+		expect(secondParamValue).toBeDefined();
+		
+		expect(u.queryParams[firstParamKey!]).toBe(firstParamValue);
+		expect(u.queryParams[secondParamKey!]).toBe(secondParamValue);
 	});
 
 
