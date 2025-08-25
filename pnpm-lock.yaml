@@ -34,8 +34,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7
       '@tsdotnet/ordered-registry':
-        specifier: ^1.1.11
-        version: 1.1.11
+        specifier: ^1.1.12
+        version: 1.1.12
       '@tsdotnet/serialization':
         specifier: ^1.1.5
         version: 1.1.5
@@ -531,11 +531,11 @@ packages:
   '@tsdotnet/key-value-pair@1.2.7':
     resolution: {integrity: sha512-sDTYaDcwWaHBdqmTexjxt+52ZON8Bq+JxYJwrj5C7n1D1lXzmr9umbbvDt9dOBlvsUY198daOUhpo363p9IIhg==}
 
-  '@tsdotnet/linked-node-list@1.4.10':
-    resolution: {integrity: sha512-YDsS9TFHc0lHKB7wv/ZHIaS8J5rbPAtJxVgvJd12gIcAyVpAWG2xBhf2ZkEUmr3cAZu1+Do0FkJqrRI59QAD+g==}
+  '@tsdotnet/linked-node-list@1.4.11':
+    resolution: {integrity: sha512-UJYBfqqQXdnWdOtBaK8PYrUt7eM+eDXDf1Wbn6DbzRMUY6E0WIVfFyW1afNJFGSF/3UHDSkTTmvtaV/04Dt25A==}
 
-  '@tsdotnet/ordered-registry@1.1.11':
-    resolution: {integrity: sha512-HGm+uzSanaPPXc1xFbVUezbPDXUXpUaUTHXVW8bRTu7qj3QzEVCngxmhB1ta7KjlDD9g/ZtLmLaolqSqHq7Iqg==}
+  '@tsdotnet/ordered-registry@1.1.12':
+    resolution: {integrity: sha512-RyP26oIJZInWFe9q7VviwkFYe0Cpmc80lhZHVsJ1Bt2FFH//I0MV3sKsQTKjGdP6Y2Cpwj61fUGk/h0RbJESjw==}
 
   '@tsdotnet/serialization@1.1.5':
     resolution: {integrity: sha512-2J93CEsn5EgSHf/dzk5L6zvYfmhFU4i8YfhvyPl4u+CjmgADuAict9yJ41F6TThzExVhxxf+AF7rOv4rAAE4oA==}
@@ -1833,20 +1833,20 @@ snapshots:
       '@tsdotnet/type': 1.2.7
       tslib: 2.8.1
 
-  '@tsdotnet/linked-node-list@1.4.10':
+  '@tsdotnet/linked-node-list@1.4.11':
     dependencies:
       '@tsdotnet/collection-base': 2.1.9
       '@tsdotnet/common-interfaces': 1.0.6
       '@tsdotnet/exceptions': 1.2.5
       tslib: 2.8.1
 
-  '@tsdotnet/ordered-registry@1.1.11':
+  '@tsdotnet/ordered-registry@1.1.12':
     dependencies:
       '@tsdotnet/collection-base': 2.1.9
       '@tsdotnet/common-interfaces': 1.0.6
       '@tsdotnet/compare': 1.7.4
       '@tsdotnet/exceptions': 1.2.5
-      '@tsdotnet/linked-node-list': 1.4.10
+      '@tsdotnet/linked-node-list': 1.4.11
       tslib: 2.8.1
 
   '@tsdotnet/serialization@1.1.5':
