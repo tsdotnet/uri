@@ -34,8 +34,8 @@ importers:
         specifier: ^1.2.7
         version: 1.2.7
       '@tsdotnet/ordered-registry':
-        specifier: ^1.1.12
-        version: 1.1.12
+        specifier: ^1.1.13
+        version: 1.1.13
       '@tsdotnet/serialization':
         specifier: ^1.1.5
         version: 1.1.5
@@ -534,8 +534,8 @@ packages:
   '@tsdotnet/linked-node-list@1.4.11':
     resolution: {integrity: sha512-UJYBfqqQXdnWdOtBaK8PYrUt7eM+eDXDf1Wbn6DbzRMUY6E0WIVfFyW1afNJFGSF/3UHDSkTTmvtaV/04Dt25A==}
 
-  '@tsdotnet/ordered-registry@1.1.12':
-    resolution: {integrity: sha512-RyP26oIJZInWFe9q7VviwkFYe0Cpmc80lhZHVsJ1Bt2FFH//I0MV3sKsQTKjGdP6Y2Cpwj61fUGk/h0RbJESjw==}
+  '@tsdotnet/ordered-registry@1.1.13':
+    resolution: {integrity: sha512-ynQK79+do8+DIrQ1HJnjHEm++Ldeg49k/ulISCmnZ7EgzboXpYtJNDgw2AAP1cgjCAHXr4x2i9PT+wLxZ4wQyA==}
 
   '@tsdotnet/serialization@1.1.5':
     resolution: {integrity: sha512-2J93CEsn5EgSHf/dzk5L6zvYfmhFU4i8YfhvyPl4u+CjmgADuAict9yJ41F6TThzExVhxxf+AF7rOv4rAAE4oA==}
@@ -1840,7 +1840,7 @@ snapshots:
       '@tsdotnet/exceptions': 1.2.5
       tslib: 2.8.1
 
-  '@tsdotnet/ordered-registry@1.1.12':
+  '@tsdotnet/ordered-registry@1.1.13':
     dependencies:
       '@tsdotnet/collection-base': 2.1.9
       '@tsdotnet/common-interfaces': 1.0.6

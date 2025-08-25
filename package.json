@@ -57,7 +57,7 @@
     "@tsdotnet/common-interfaces": "^1.0.6",
     "@tsdotnet/exceptions": "^1.2.5",
     "@tsdotnet/key-value-pair": "^1.2.7",
-    "@tsdotnet/ordered-registry": "^1.1.12",
+    "@tsdotnet/ordered-registry": "^1.1.13",
     "@tsdotnet/serialization": "^1.1.5",
     "@tsdotnet/text-utility": "^1.2.4",
     "@tsdotnet/type": "^1.2.7",
