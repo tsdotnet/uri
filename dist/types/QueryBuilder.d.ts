@@ -3,8 +3,8 @@
  * @license MIT
  */
 import OrderedRegistry from '@tsdotnet/ordered-registry';
-import type QueryParam from './QueryParam';
-import type UriComponent from './UriComponent';
+import type QueryParam from './QueryParam.js';
+import type UriComponent from './UriComponent.js';
 export default class QueryBuilder extends OrderedRegistry<string, UriComponent.Value | UriComponent.Value[]> {
     constructor(query: QueryParam.Convertible, decodeValues?: boolean);
     static init(query: QueryParam.Convertible, decodeValues?: boolean): QueryBuilder;

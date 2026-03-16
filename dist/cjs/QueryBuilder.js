@@ -8,7 +8,7 @@ const tslib_1 = require("tslib");
 const key_value_pair_1 = tslib_1.__importDefault(require("@tsdotnet/key-value-pair"));
 const ordered_registry_1 = tslib_1.__importDefault(require("@tsdotnet/ordered-registry"));
 const type_1 = tslib_1.__importDefault(require("@tsdotnet/type"));
-const query_1 = require("./query");
+const query_js_1 = require("./query.js");
 class QueryBuilder extends ordered_registry_1.default {
     constructor(query, decodeValues = true) {
         super();
@@ -61,11 +61,11 @@ class QueryBuilder extends ordered_registry_1.default {
         return this;
     }
     importFromString(values, deserialize = true, decodeValues = true) {
-        (0, query_1.parse)(values, (key, value) => { this.importSingle(key, value); }, deserialize, decodeValues);
+        (0, query_js_1.parse)(values, (key, value) => { this.importSingle(key, value); }, deserialize, decodeValues);
         return this;
     }
     encode(prefixIfNotEmpty) {
-        return (0, query_1.encode)(this, prefixIfNotEmpty);
+        return (0, query_js_1.encode)(this, prefixIfNotEmpty);
     }
     toString() {
         return this.encode();

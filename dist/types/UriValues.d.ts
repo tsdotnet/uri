@@ -4,7 +4,7 @@
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
 
-import SchemeValue from './SchemeValue';
+import SchemeValue from './SchemeValue.js';
 
 // noinspection SpellCheckingInspection
 /**

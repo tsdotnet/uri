@@ -4,8 +4,8 @@
  */
 import type { Primitive } from '@tsdotnet/common-interfaces';
 import { StringKeyValuePair } from '@tsdotnet/key-value-pair';
-import type QueryParam from './QueryParam';
-import type UriComponent from './UriComponent';
+import type QueryParam from './QueryParam.js';
+import type UriComponent from './UriComponent.js';
 export declare function encode(values: UriComponent.Values | QueryParam.IterableOrArrayLike, prefixIfNotEmpty?: boolean): string;
 export declare function encodeValue(value: UriComponent.Value): string;
 export declare function isUriComponentFormattable(instance: unknown): instance is UriComponent.Formattable;

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import Scheme from '../src/Scheme';
-import Uri from '../src/Uri';
+import Scheme from '../src/Scheme.js';
+import Uri from '../src/Uri.js';
 
 const pathAfterRoot = 'one/two/three.html';
 const path = '/' + pathAfterRoot;

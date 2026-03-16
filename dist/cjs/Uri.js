@@ -8,9 +8,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Fields = exports.Uri = void 0;
 const tslib_1 = require("tslib");
 const exceptions_1 = require("@tsdotnet/exceptions");
-const query_1 = require("./query");
+const query_js_1 = require("./query.js");
 const text_utility_1 = require("@tsdotnet/text-utility");
-const Scheme_1 = tslib_1.__importDefault(require("./Scheme"));
+const Scheme_js_1 = tslib_1.__importDefault(require("./Scheme.js"));
 const VOID0 = void 0;
 class Uri {
     constructor(scheme, userInfo, host, port, path, query, fragment) {
@@ -21,10 +21,10 @@ class Uri {
         this.authority = this.getAuthority() || null;
         this.path = path || null;
         if (query && typeof query !== 'string')
-            query = (0, query_1.encode)(query);
+            query = (0, query_js_1.encode)(query);
         this.query = formatQuery(query) || null;
         Object.freeze(this.queryParams = this.query
-            ? (0, query_1.parseToValues)(this.query) : {});
+            ? (0, query_js_1.parseToValues)(this.query) : {});
         this.pathAndQuery = this.getPathAndQuery() || null;
         this.fragment = formatFragment(fragment) || null;
         this.absoluteUri = this.getAbsoluteUri();
@@ -115,7 +115,7 @@ function copyUri(from, to) {
     }
     return to;
 }
-const SLASH = '/', SLASH2 = '//', QM = query_1.Separator.Query, HASH = '#', EMPTY = '', AT = '@';
+const SLASH = '/', SLASH2 = '//', QM = query_js_1.Separator.Query, HASH = '#', EMPTY = '', AT = '@';
 function getScheme(scheme) {
     let s = scheme;
     if (typeof s === 'string') {
@@ -126,7 +126,7 @@ function getScheme(scheme) {
             .replace(/[^a-z0-9+.-]+$/g, EMPTY);
         if (!s)
             return null;
-        if (Scheme_1.default.isValid(s))
+        if (Scheme_js_1.default.isValid(s))
             return s;
     }
     else {

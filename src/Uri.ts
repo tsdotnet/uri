@@ -6,12 +6,12 @@
 
 import {Action, Primitive} from '@tsdotnet/common-interfaces';
 import {Exception, ArgumentException, ArgumentOutOfRangeException} from '@tsdotnet/exceptions';
-import {encode, parseToValues, Separator} from './query';
+import {encode, parseToValues, Separator} from './query.js';
 import {trim} from '@tsdotnet/text-utility';
-import type QueryParam from './QueryParam';
-import Scheme from './Scheme';
-import type SchemeValue from './SchemeValue';
-import type UriValues from './UriValues';
+import type QueryParam from './QueryParam.js';
+import Scheme from './Scheme.js';
+import type SchemeValue from './SchemeValue.js';
+import type UriValues from './UriValues.js';
 
 const VOID0: undefined = void 0;
 

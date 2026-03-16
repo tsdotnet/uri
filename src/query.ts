@@ -8,8 +8,8 @@ import extractKeyValue from '@tsdotnet/key-value-pair';
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import * as Serialize from '@tsdotnet/serialization';
 import type from '@tsdotnet/type';
-import type QueryParam from './QueryParam';
-import type UriComponent from './UriComponent';
+import type QueryParam from './QueryParam.js';
+import type UriComponent from './UriComponent.js';
 
 /*
  * This module is provided as a lighter weight utility for acquiring query params.

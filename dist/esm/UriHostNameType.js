@@ -12,7 +12,7 @@ var UriHostNameType;
     UriHostNameType[UriHostNameType["Unknown"] = 4] = "Unknown";
 })(UriHostNameType || (UriHostNameType = {}));
 Object.freeze(UriHostNameType);
-var UriHostNameType$1 = UriHostNameType;
+var UriHostNameType_default = UriHostNameType;
 
-export { UriHostNameType$1 as default };
+export { UriHostNameType_default as default };
 //# sourceMappingURL=UriHostNameType.js.map

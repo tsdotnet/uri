@@ -4,7 +4,7 @@
  */
 
 import type {StringKeyValuePair} from '@tsdotnet/key-value-pair';
-import type UriComponent from './UriComponent';
+import type UriComponent from './UriComponent.js';
 
 type QueryParamIterable
 	= Iterable<StringKeyValuePair<UriComponent.Value | UriComponent.Value[]>>;

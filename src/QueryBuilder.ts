@@ -7,9 +7,9 @@ import extractKeyValue from '@tsdotnet/key-value-pair';
 import {StringKeyValuePair} from '@tsdotnet/key-value-pair';
 import OrderedRegistry from '@tsdotnet/ordered-registry';
 import type from '@tsdotnet/type';
-import {encode, parse} from './query';
-import type QueryParam from './QueryParam';
-import type UriComponent from './UriComponent';
+import {encode, parse} from './query.js';
+import type QueryParam from './QueryParam.js';
+import type UriComponent from './UriComponent.js';
 
 /**
  * Provides a means for parsing and building a set of parameters.

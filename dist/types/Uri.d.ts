@@ -4,9 +4,9 @@
  * Based on: https://en.wikipedia.org/wiki/Uniform_Resource_Identifier
  */
 import { Primitive } from '@tsdotnet/common-interfaces';
-import type QueryParam from './QueryParam';
-import type SchemeValue from './SchemeValue';
-import type UriValues from './UriValues';
+import type QueryParam from './QueryParam.js';
+import type SchemeValue from './SchemeValue.js';
+import type UriValues from './UriValues.js';
 export declare class Uri implements UriValues {
     readonly scheme: SchemeValue.Any | null;
     readonly userInfo: string | null;
