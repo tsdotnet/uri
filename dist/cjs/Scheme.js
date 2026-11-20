@@ -21,7 +21,19 @@ var Scheme;
     Scheme.TELNET = 'telnet';
     Scheme.UUID = 'uuid';
     Scheme.All = Object.freeze([
-        Scheme.File, Scheme.FTP, Scheme.GOPHER, Scheme.HTTP, Scheme.HTTPS, Scheme.LDAP, Scheme.MAILTO, Scheme.PIPE, Scheme.TCP, Scheme.NEWS, Scheme.NNTP, Scheme.TELNET, Scheme.UUID
+        Scheme.File,
+        Scheme.FTP,
+        Scheme.GOPHER,
+        Scheme.HTTP,
+        Scheme.HTTPS,
+        Scheme.LDAP,
+        Scheme.MAILTO,
+        Scheme.PIPE,
+        Scheme.TCP,
+        Scheme.NEWS,
+        Scheme.NNTP,
+        Scheme.TELNET,
+        Scheme.UUID
     ]);
     function isValid(scheme) {
         return Scheme.All.indexOf(scheme) != -1;

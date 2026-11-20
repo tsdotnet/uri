@@ -18,7 +18,7 @@ declare namespace Scheme {
     const NNTP: SchemeValue.NNTP;
     const TELNET: SchemeValue.Telnet;
     const UUID: SchemeValue.UUID;
-    const All: readonly ("file" | "ftp" | "gopher" | "http" | "https" | "ldap" | "mailto" | "net.pipe" | "net.tcp" | "nntp" | "news" | "telnet" | "uuid")[];
+    const All: readonly ("file" | "ftp" | "gopher" | "http" | "https" | "ldap" | "mailto" | "net.pipe" | "net.tcp" | "news" | "nntp" | "telnet" | "uuid")[];
     function isValid(scheme: string): scheme is SchemeValue.Any;
 }
 export default Scheme;
