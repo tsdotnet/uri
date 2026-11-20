@@ -4,7 +4,10 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.tsdotnet = global.tsdotnet || {}, global.tsdotnet.uri = global.tsdotnet.uri || {}), global.tsdotnet.keyValuePair, global.tsdotnet.serialization, global.tsdotnet.type, global.tsdotnet.orderedRegistry, global.tsdotnet.exceptions, global.tsdotnet.textUtility));
 })(this, (function (exports, extractKeyValue, Serialize, type, OrderedRegistry, exceptions, textUtility) { 'use strict';
 
-    function _interopNamespaceDefault(e) {
+    function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
+
+    function _interopNamespace(e) {
+        if (e && e.__esModule) return e;
         var n = Object.create(null);
         if (e) {
             Object.keys(e).forEach(function (k) {
@@ -21,7 +24,10 @@
         return Object.freeze(n);
     }
 
-    var Serialize__namespace = /*#__PURE__*/_interopNamespaceDefault(Serialize);
+    var extractKeyValue__default = /*#__PURE__*/_interopDefault(extractKeyValue);
+    var Serialize__namespace = /*#__PURE__*/_interopNamespace(Serialize);
+    var type__default = /*#__PURE__*/_interopDefault(type);
+    var OrderedRegistry__default = /*#__PURE__*/_interopDefault(OrderedRegistry);
 
     /*!
      * @author electricessence / https://github.com/electricessence/
@@ -34,10 +40,10 @@
         if (typeof values != 'object')
             throw new TypeError('Collection of key value pair expected.');
         const entries = [];
-        const iterable = type.asIterable(values);
+        const iterable = type__default.default.asIterable(values);
         if (iterable) {
             for (const entry of iterable) {
-                extractKeyValue(entry, (key, value) => appendKeyValue(entries, key, value));
+                extractKeyValue__default.default(entry, (key, value) => appendKeyValue(entries, key, value));
             }
         }
         else {
@@ -52,7 +58,7 @@
         entries.push(key + KEY_VALUE_SEPARATOR + encodeValue(value));
     }
     function appendKeyValue(entries, key, value) {
-        const iterable = type.asIterable(value);
+        const iterable = type__default.default.asIterable(value);
         if (iterable) {
             for (const v of iterable)
                 appendKeyValueSingle(entries, key, v);
@@ -73,7 +79,7 @@
         }
     }
     function isUriComponentFormattable(instance) {
-        return type.hasMemberOfType(instance, TO_URI_COMPONENT, 'function');
+        return type__default.default.hasMemberOfType(instance, TO_URI_COMPONENT, 'function');
     }
     function parse(query, entryHandler, deserialize = true, decodeValues = true) {
         if (query && (query = query.replace(/^\s*\?+/, ''))) {
@@ -134,7 +140,7 @@
      * @author electricessence / https://github.com/electricessence/
      * @license MIT
      */
-    class QueryBuilder extends OrderedRegistry {
+    class QueryBuilder extends OrderedRegistry__default.default {
         constructor(query, decodeValues = true) {
             super();
             this.importQuery(query, decodeValues);
@@ -146,9 +152,9 @@
             if (typeof query === 'string') {
                 this.importFromString(query, decodeValues);
             }
-            else if (type.isIterable(query)) {
+            else if (type__default.default.isIterable(query)) {
                 for (const entry of query) {
-                    extractKeyValue(entry, (key, value) => { this.import(key, value); });
+                    extractKeyValue__default.default(entry, (key, value) => { this.import(key, value); });
                 }
             }
             else {
