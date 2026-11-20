@@ -1,4 +1,4 @@
-![@tsdotnet/uri: URLs, in parts. Parse, inspect and rebuild a Uri.](https://cdn.jsdelivr.net/gh/tsdotnet/uri@master/assets/banner.svg)
+<a name="banner"><img src="https://cdn.jsdelivr.net/gh/tsdotnet/uri@master/assets/banner.svg" alt="@tsdotnet/uri: URLs, in parts. Parse, inspect and rebuild a Uri."></a>
 
 [![npm version](https://img.shields.io/npm/v/@tsdotnet/uri.svg?style=flat-square)](https://www.npmjs.com/package/@tsdotnet/uri)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/tsdotnet/uri/blob/master/LICENSE)
